@@ -2,9 +2,7 @@
 
 namespace app\controllers;
 
-use yii\web\Controller;
-
-class MyController extends Controller
+class MyController extends AppController
 {
     public function actionIndex($id = null)
     {
@@ -16,5 +14,11 @@ class MyController extends Controller
         if (!$id) $id = 'test';
 
         return $this->render('index', compact('hi', 'names', 'id'));
+    }
+
+    public function actionBlogPost()
+    {
+        
+        return 'Blog Post';
     }
 }

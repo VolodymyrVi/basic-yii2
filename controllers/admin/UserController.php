@@ -2,9 +2,9 @@
 
 namespace app\controllers\admin;
 
-use yii\web\Controller;
+use App\controllers\AppController;
 
-class UserController extends Controller
+class UserController extends AppController
 {
     public function actionIndex()
     {
