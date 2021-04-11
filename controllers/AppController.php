@@ -12,11 +12,3 @@ class AppController extends Controller
     }
 
 }
-/**
- * @param array $arr
- * @return void
- */
-function debug(array $arr)
-    {
-        echo '<pre>' . print_r($arr, true) . '</pre>';
-    }
