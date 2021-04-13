@@ -1,3 +1,10 @@
+<?php
+    //$this->title = 'One Article';
+?>
+<?php $this->beginBlock('block1');  ?>
+    <h1>Заголовок страницы</h1>
+<?php $this->endBlock('block1') ?>
+
 <h1>Show Action</h1>
 
 

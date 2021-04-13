@@ -17,7 +17,7 @@ AppAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php $this->registerCsrfMetaTags() ?>
 
-    <title>Document</title>
+    <title><?= $this->title ?></title>
     <?php $this->head() ?>
 </head>
 <body>
@@ -31,6 +31,11 @@ AppAsset::register($this);
             <li role="presentation"><?= Html::a('Articles', ['post/index'])?></li>
             <li role="presentation"><?= Html::a('Article', ['post/show'])?></li>
         </ul>
+
+        <? if (isset($this->blocks['block1'])): ?>
+            <? echo $this->blocks['block1'] ?>
+        <? endif; ?>
+
         <?=$content ?>
 
     </div>
