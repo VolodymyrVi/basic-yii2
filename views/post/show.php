@@ -6,7 +6,13 @@
 <?php $this->endBlock('block1') ?>
 
 <h1>Show Action</h1>
-<? debug($cats) ?>
+<?
+//    foreach ($cats as $cat){
+//        echo $cat->title . '<br>';
+//    }
+debug($cats);
+
+?>
 
 
 <button class="btn btn-success" id="btn">Click me...</button>
