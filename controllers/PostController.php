@@ -21,12 +21,19 @@ class PostController extends AppController
 
     public function actionIndex()
     {
-        if(Yii::$app->request->isAjax){
+        if (Yii::$app->request->isAjax) {
             debug(Yii::$app->request->post());
             return 'test';
         }
         $model = new TestForm();
-
+        if ($model->load(Yii::$app->request->post()) )   {
+            if ($model->validate()){
+                Yii::$app->session->setFlash('success', 'Дані прийняті');
+                return $this->refresh();
+            }else{
+                Yii::$app->session->setFlash('error', 'Помилка');
+            }
+        }
         $this->view->title = 'All Articles';
         return $this->render('test', compact('model'));
     }
