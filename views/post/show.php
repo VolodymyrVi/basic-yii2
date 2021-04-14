@@ -6,6 +6,7 @@
 <?php $this->endBlock('block1') ?>
 
 <h1>Show Action</h1>
+<? debug($cats) ?>
 
 
 <button class="btn btn-success" id="btn">Click me...</button>
