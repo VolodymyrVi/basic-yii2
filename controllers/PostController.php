@@ -2,9 +2,9 @@
 
 namespace app\controllers;
 
+use PHPUnit\Util\Test;
 use Yii;
-use yii\web\Request;
-
+use app\models\TestForm;
 class PostController extends AppController
 {
     public $layout = 'basic';
@@ -15,21 +15,23 @@ class PostController extends AppController
         {
             $this->enableCsrfValidation = false;
         }
+
         return parent::beforeAction($action);
     }
 
     public function actionIndex()
     {
         if(Yii::$app->request->isAjax){
-            //debug($_GET);
             debug(Yii::$app->request->post());
             return 'test';
         }
-        return $this->render('test');
+        $model = new TestForm();
+
+        $this->view->title = 'All Articles';
+        return $this->render('test', compact('model'));
     }
     public function actionShow()
     {
-        //$this->layout = 'basic';
         $this->view->title = 'One Article';
         $this->view->registerMetaTag(['name' => 'keywords', 'content' => 'ключевики']);
         $this->view->registerMetaTag(['name' => 'description', 'content' => 'описание страницы']);
