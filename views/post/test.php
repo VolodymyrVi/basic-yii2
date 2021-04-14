@@ -12,9 +12,9 @@ use yii\helpers\Html;
 ?>
 
 <?php $form = ActiveForm::begin(['options'=>['id'=>'testForm']]) ?>
-    <?= $form->field($model, 'name')->label('Імя') ?>
+    <?= $form->field($model, 'name') ?>
     <?= $form->field($model, 'email')->input('email') ?>
-    <?= $form->field($model, 'text')->label('Текст повідомлення')->textarea(['rows' =>5]) ?>
+    <?= $form->field($model, 'text')->textarea(['rows' =>5]) ?>
     <?= Html::submitButton('Send', ['class' => 'btn btn-success']) ?>
 <?php ActiveForm::end() ?>
 
