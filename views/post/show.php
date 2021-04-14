@@ -10,6 +10,9 @@
 //    foreach ($cats as $cat){
 //        echo $cat->title . '<br>';
 //    }
+//foreach ($cats as $cat){
+//    echo $cat['title'] .  '<br>';
+//}
 debug($cats);
 
 ?>
