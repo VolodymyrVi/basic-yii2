@@ -1,9 +1,9 @@
 <?php
     //$this->title = 'One Article';
 ?>
-<?php $this->beginBlock('block1');  ?>
-    <h1>Заголовок страницы</h1>
-<?php $this->endBlock('block1') ?>
+<?php //$this->beginBlock('block1');  ?>
+
+<?php //$this->endBlock('block1') ?>
 
 <h1>Show Action</h1>
 <?
@@ -13,7 +13,23 @@
 //foreach ($cats as $cat){
 //    echo $cat['title'] .  '<br>';
 //}
-debug($cats);
+//debug($cats);
+//debug($cats[0]->products);
+//echo count($cats->products);
+//debug($cats->products);
+
+foreach ($cats as $cat) {
+               echo '<ul>';
+                echo '<li>' . $cat->title . '</li>';
+                $products = $cat->products;
+                foreach ($products as $product){
+                    echo '<ul>';
+                        echo '<li>' . $product->title . '</li>';
+                    echo '</ul>';
+                }
+               echo '</ul>';
+
+}
 
 ?>
 
